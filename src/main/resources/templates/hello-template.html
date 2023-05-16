@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>hello mvc</title>
+</head>
+<body>
+
+<!-- 타임리프. 경로를 그대로 열었을 때 (copy absolute path)는 뒤에 hello! empty 출력. -->
+<p th:text="'hello ' + ${name}">hello! empty</p>
+
+</body>
+</html>
