@@ -21,13 +21,15 @@ public class HelloController {
 		return "hello-template";
 	}
 	
-	//api
+	//문자 그대로 넘기기
 	@GetMapping("hello-string")
 	@ResponseBody
 	public String helloString(@RequestParam("name") String name) {
 		return "hello " + name; // exam : "hello spring";
 	}
 	
+	//api 방식
+	//json 방식으로 데이터 넘겨줌 
 	@GetMapping("hello-api")
 	@ResponseBody
 	public Hello helloApi(@RequestParam("name") String name) {
@@ -38,7 +40,7 @@ public class HelloController {
 	
 	static class Hello{
 		private String name;
-		
+				
 		public String getName() {
 			return name;
 		}
