@@ -10,14 +10,12 @@ import org.springframework.stereotype.Service;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 
-@Service
 public class MemberService {
 	
 	private final MemberRepository memberRepository;
 	
 	// 리포짓토리 의존성 주입
 	// @Repository와 연결
-	@Autowired
 	public MemberService(MemberRepository memberRepository) {
 		this.memberRepository = memberRepository;
 	}
