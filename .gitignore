@@ -8,7 +8,7 @@ build/
 ### STS ###
 .apt_generated
 .classpath
-.factorypath
+.factorypathgit
 .project
 .settings
 .springBeans
@@ -35,3 +35,5 @@ out/
 
 ### VS Code ###
 .vscode/
+
+**/application.properties
