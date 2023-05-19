@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import hello.hellospring.repository.JdbcMemberRepository;
+import hello.hellospring.repository.JdbcTemplateMemberRepository;
 import hello.hellospring.repository.MemberRepository;
 
 //컴포넌트 스캔 아닌 자바코드로 스프링빈 설정
@@ -28,7 +29,8 @@ public class SpringConfig {
 	@Bean MemberRepository memberRepository() {
 		//구현체만 바꿔 끼워서 DB 연동하기
 		//return new MemoryMemberRepository();
-		return new JdbcMemberRepository(dataSource);
+		//return new JdbcMemberRepository(dataSource);
+		return new JdbcTemplateMemberRepository(dataSource);
 	}
 
 }

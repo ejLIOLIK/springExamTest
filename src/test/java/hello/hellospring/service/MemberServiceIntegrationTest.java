@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import hello.hellospring.domain.Member;
-import hello.hellospring.repository.JdbcMemberRepository;
+import hello.hellospring.repository.MemberRepository;
 
 //스프링통합테스트를 위한 어노테이션.
 @SpringBootTest
@@ -18,7 +18,10 @@ import hello.hellospring.repository.JdbcMemberRepository;
 class MemberServiceIntegrationTest {
 
 	@Autowired MemberService memberService;
-	@Autowired JdbcMemberRepository memberRepository ;
+	//JdbcMemberRepository로 선언 하지 않는 이유 
+	//SpringConfig에서 이미 JdbcMemberRepository로 구현체를 설정 해줬기 때문에
+	//MemberRepository로 주입하면 JdbcMemberRepository가 된다.
+	@Autowired MemberRepository memberRepository ;
 	
 	@Test
 	void Join() {
