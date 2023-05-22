@@ -22,23 +22,33 @@ public class SpringConfig {
 	}
 	*/	
 	
+	/*
 	private EntityManager em;
 	
 	@Autowired
 	public SpringConfig(EntityManager em) {
 		this.em = em;
 	}
+	*/
+	
+	// 스프링 데이터 Jpa
+	private final MemberRepository memberRepository;
+	
+	@Autowired
+	public SpringConfig(MemberRepository memberRepository) {
+		this.memberRepository = memberRepository;
+	}
 	
 	@Bean
 	public MemberService memberService() {
-		return new MemberService(memberRepository());
+		return new MemberService(memberRepository);
 	}
 	
-	@Bean MemberRepository memberRepository() {
+//	@Bean MemberRepository memberRepository() {
 		//구현체만 바꿔 끼워서 DB 연동하기
 		//return new MemoryMemberRepository();
 		//return new JdbcMemberRepository(dataSource);
-		return new JpaMemberRepository(em);
-	}
+		//return new JpaMemberRepository(em);
+//	}
 
 }
